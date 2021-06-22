@@ -19,7 +19,7 @@
         </p>
       </b-card-text>
 
-      <b-button variant="primary" @click="getMealDetails(meal.idMeal)"
+      <b-button variant="primary" id="getMealDetailsBtn" @click="getMealDetails(meal.idMeal)"
         >Get Meal Details</b-button
       >
     </b-card>
