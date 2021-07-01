@@ -1,15 +1,10 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
     <app-header></app-header>
     <router-view/>
     <app-footer></app-footer>
   </div>
 </template>
-
 
 <script>
 import AppHeader from '@/components/AppHeader.vue'
@@ -22,6 +17,7 @@ export default {
   }
 }
 </script>
+
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -37,17 +33,4 @@ html, body {
   height: 100%;
   min-height: 100%;
 }
-
-// #nav {
-//   padding: 30px;
-
-//   a {
-//     font-weight: bold;
-//     color: #2c3e50;
-
-//     &.router-link-exact-active {
-//       color: #42b983;
-//     }
-//   }
-// }
 </style>

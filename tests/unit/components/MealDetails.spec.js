@@ -68,4 +68,15 @@ describe('In MealDetails Component', () => {
         wrapper.vm.getMealDetailsById('52856');
         expect(actions.getMealDetailsById).toHaveBeenCalled();
     });
+
+    // it('should throw error', async () => {
+    //     try{
+    //         wrapper.vm.getMealDetailsById('52856');
+    //        await expect(actions.getMealDetailsById).toHaveBeenCalled();
+    //     }
+    //     catch(e){
+    //         expect(actions.getMealDetailsById).rejects.toThrow(e)
+    //     }
+        
+    // })
 });

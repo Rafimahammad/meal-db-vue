@@ -41,14 +41,14 @@
       <h3>Instructions</h3>
       <p class="instructions">{{ mealDetails.strInstructions }}</p>
 
-      <!-- <video controls>
-       
-
-        <b-embed type="video">
-          <source :src="mealDetails.strYoutube" />
-        </b-embed>
-      </video> -->
-       <!-- <source :src="mealDetails.strYoutube" /> -->
+      <div class="instructionVideo">
+        <b-embed
+          type="iframe"
+          aspect="16by9"
+          :src="getYoutubeUrl"
+          allowfullscreen
+        ></b-embed>
+      </div>
     </div>
 
     <div v-else-if="!isLoading && error">
@@ -57,7 +57,7 @@
 
     <div v-else>
       <div>
-        <b-spinner variant="secondary" label="Spinning"></b-spinner><br>
+        <b-spinner variant="secondary" label="Spinning"></b-spinner><br />
         <b>Please Wait</b>
       </div>
     </div>
@@ -66,13 +66,12 @@
 
 <script>
 import { mapState, mapGetters } from "vuex";
-import ErrorPage from './ErrorPage.vue';
+import ErrorPage from "./ErrorPage.vue";
 export default {
- 
   name: "MealDetails",
 
   components: {
-    ErrorPage
+    ErrorPage,
   },
 
   data() {
@@ -84,7 +83,7 @@ export default {
 
   computed: {
     ...mapState(["mealDetails"]),
-    ...mapGetters(["getIngredients"]),
+    ...mapGetters(["getIngredients", "getYoutubeUrl"]),
   },
 
   created() {
@@ -126,5 +125,10 @@ th {
 .instructions {
   margin-bottom: 0px;
   padding-bottom: 1rem;
+}
+
+.instructionVideo {
+  max-width: 50%;
+  margin: auto;
 }
 </style>

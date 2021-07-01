@@ -27,4 +27,8 @@ export default{
 
         
     },
+
+    getYoutubeUrl(state) {
+        return state.mealDetails.strYoutube.replace('watch?v=', 'embed/');
+    },
 };

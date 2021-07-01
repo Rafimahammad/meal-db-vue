@@ -1,7 +1,7 @@
 <template>
     <div class="app-header">
         <b-navbar toggleable="md" type="dark" fixed="top" id="Header">
-            <router-link to="/"><img src="../assets/logo-small.png"></router-link>
+            <router-link to="/"><b-img src="../assets/logo-small.png" fluid></b-img></router-link>
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
             <b-collapse id="nav-collapse" is-nav class="app-navs">
                 <b-navbar-nav>
@@ -31,6 +31,14 @@ export default {
 
 .app-navs{
    justify-content: center;
+}
+
+.navbar-nav {
+    display: inline;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
 }
 
 a {

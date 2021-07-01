@@ -27,4 +27,9 @@ describe('store getters', () => {
       { id: 2, ingredient: 'Butter', measure: '75g' },
     ]);
   });
+
+  it('should return modified youtube url', () => {
+    const youtubeUrl = getters.getYoutubeUrl(state);
+    expect(youtubeUrl).toBe('https://www.youtube.com/embed/fDpoT0jvg4Y');
+  });
 });

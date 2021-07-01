@@ -2,16 +2,17 @@
   <div class="meal-card">
     <!-- <h3>Meal Card Component</h3> -->
 
-    <b-card
+    <div v-if="meal">
+      <b-card
       :title="meal.strMeal"
       :img-src="meal.strMealThumb"
       img-alt="Meal_Image"
       img-top
       tag="article"
       style="max-width: 18rem"
-      @click="getMealDetails(meal.idMeal)"
-      class="image-cursor"
+     
     >
+    
       <b-card-text>
         <p>
           <b>Category:</b>{{ meal.strCategory }}<br />
@@ -23,6 +24,15 @@
         >Get Meal Details</b-button
       >
     </b-card>
+    </div>
+    <div v-else>
+      <div>
+        <b-spinner variant="secondary" label="Spinning"></b-spinner><br>
+        <b>Please Wait</b>
+      </div>
+    </div>
+
+    
   </div>
 </template>
 
@@ -51,7 +61,7 @@ export default {
   padding: 0.25rem;
 }
 
-.image-cursor{
+/* .image-cursor{
     cursor: pointer;
-}
+} */
 </style>
